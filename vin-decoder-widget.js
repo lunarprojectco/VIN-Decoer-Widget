@@ -1,92 +1,69 @@
-(function ($) {
-  // Define constants
-  const CAR_MD_API_BASE_URL = 'https://api.carmd.com/v3.0';
-  const PARTNER_TOKEN = 'c66918d63fa043e4afb3e8fa7bf37951';
-  const AUTHORIZATION_KEY = 'Basic OWU1NWM3OGEtZGRhMC00NmRhLWI0YjYtM2Y5ODA1YTBhZDYz';
-  const ML_KIT_API_KEY = 'AIzaSyC3iRR3sSC07cXfIWQjO0gVze6AtP18tLw';
+import FirebaseMLVision // Import ML Kit
 
-  // Define helper functions
-  function decodeVIN(vin) {
-    return new Promise(function (resolve, reject) {
-      const requestUrl = 'https://automl.googleapis.com/v1beta1/projects/156008741883/locations/us-central1/models/VIN_Decoder:predict';
-      const requestBody = {
-        payload: {
-          image: {
-            imageBytes: vin
-          }
+@IBAction func scanVINButtonPressed(_ sender: UIButton) {
+    let cameraViewController = UIImagePickerController()
+    cameraViewController.sourceType = .camera
+    cameraViewController.delegate = self
+    present(cameraViewController, animated: true, completion: nil)
+}
+
+func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+    picker.dismiss(animated: true, completion: nil)
+    
+    guard let image = info[.originalImage] as? UIImage else {
+        print("No image selected")
+        return
+    }
+    
+    // Use ML Kit to recognize text in the image
+    let vision = Vision.vision()
+    let textRecognizer = vision.onDeviceTextRecognizer()
+    let visionImage = VisionImage(image: image)
+    textRecognizer.process(visionImage) { result, error in
+        guard error == nil, let result = result else {
+            print("Error recognizing text: \(error)")
+            return
         }
-      };
-      $.ajax({
-        url: requestUrl,
-        type: 'POST',
-        beforeSend: function (xhr) {
-          xhr.setRequestHeader('Content-Type', 'application/json');
-          xhr.setRequestHeader('Authorization', 'Bearer ' + ML_KIT_API_KEY);
-        },
-        data: JSON.stringify(requestBody),
-        success: function (data) {
-          resolve(data);
-        },
-        error: function (xhr, status, error) {
-          reject(xhr.responseText);
-        }
-      });
-    });
-  }
-
-  function displayVINData(data) {
-    const vehicleData = data.payload[0].displayName.split(' ');
-    $('#vin-widget-output').html(
-      '<ul>' +
-      '<li><strong>Year:</strong> ' + vehicleData[0] + '</li>' +
-      '<li><strong>Make:</strong> ' + vehicleData[1] + '</li>' +
-      '<li><strong>Model:</strong> ' + vehicleData[2] + '</li>' +
-      '</ul>'
-    );
-  }
-
-  // Define click handler for scan button
-  $('#vin-widget-scan-button').click(function () {
-    // Check if camera is supported by device
-    if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
-      alert('Sorry, your device does not support camera scanning.');
-      return;
+        
+        // Extract the VIN number from the recognized text
+        let vinNumber = extractVINNumber(from: result.text)
+        
+        // Use the CarMD API to decode the VIN number
+        decodeVINNumber(vinNumber)
     }
+}
 
-    // Get reference to video element
-    const videoElement = $('#vin-widget-video').get(0);
+func extractVINNumber(from text: String) -> String? {
+    // TODO: Implement VIN number extraction logic
+    return nil
+}
 
-    // Request permission to access camera
-    navigator.mediaDevices.getUserMedia({ video: true })
-      .then(function (stream) {
-        // Start playing video stream in video element
-        videoElement.srcObject = stream;
-        videoElement.play();
-      })
-      .catch(function (error) {
-        alert('Sorry, there was an error accessing the camera: ' + error.message);
-      });
+function decodeVINNumber(vinNumber) {
+  // Use the CarMD API to decode the VIN number
+  const xhr = new XMLHttpRequest();
+  xhr.open('POST', 'https://api.carmd.com/v3.0/decode');
+  xhr.setRequestHeader('Content-Type', 'application/json');
+  xhr.setRequestHeader('Authorization', 'Basic c66918d63fa043e4afb3e8fa7bf37951');
+  xhr.onload = function() {
+    if (xhr.status === 200) {
+      const response = JSON.parse(xhr.responseText);
+      
+      // Fill out the contact form with the decoded data
+      const form = document.querySelector('#multi-point-vehicle-inspection-form');
+      const vinNumberField = form.querySelector('#input_1_1');
+      const yearField = form.querySelector('#input_1_2');
+      const makeField = form.querySelector('#input_1_3');
+      const modelField = form.querySelector('#input_1_4');
+      const trimField = form.querySelector('#input_1_5');
 
-    // Define function to stop video stream
-    function stopVideoStream() {
-      videoElement.pause();
-      videoElement.srcObject = null;
-      stream.getTracks().forEach(function (track) {
-        track.stop();
-      });
+      vinNumberField.value = response.data.vin;
+      yearField.value = response.data.year;
+      makeField.value = response.data.make;
+      modelField.value = response.data.model;
+      trimField.value = response.data.trim;
+    } else {
+      console.log('Error decoding VIN number');
     }
-
-    // Define function to process scanned VIN
-    function processScannedVIN(vin) {
-      decodeVIN(vin)
-        .then(function (data) {
-          displayVINData(data);
-          stopVideoStream();
-        })
-        .catch(function (error) {
-          alert('Sorry, there was an error decoding the VIN: ' + error);
-          stopVideoStream();
-        });
-    }
-
-    //
+  };
+  xhr.send(JSON.stringify({ vin: vinNumber }));
+}
