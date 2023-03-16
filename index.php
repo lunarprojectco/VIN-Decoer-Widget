@@ -61,6 +61,7 @@ class Vin_Decoder_Widget extends WP_Widget {
         echo '<input type="text" id="submodel" name="submodel"><br><br>';
         echo '</form>';
         echo '</div>';
+        echo '<script src="' . plugin_dir_url( __FILE__ ) . 'js/vin-decoder-widget.js"></script>'; // add script tag
         echo $args['after_widget'];
     }
 
