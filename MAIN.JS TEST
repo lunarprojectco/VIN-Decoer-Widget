@@ -1,0 +1,73 @@
+let apiKey = "c66918d63fa043e4afb3e8fa7bf37951";
+
+function extractVINNumber(text) {
+  const vinPattern = /[A-HJ-NPR-Z\d]{17}/;
+  const match = text.match(vinPattern);
+  if (match) {
+    return match[0];
+  } else {
+    return null;
+  }
+}
+
+function decodeVINNumber(vinNumber) {
+  // Use the CarMD API to decode the VIN number
+  const xhr = new XMLHttpRequest();
+  xhr.open('POST', 'https://api.carmd.com/v3.0/decode');
+  xhr.setRequestHeader('Content-Type', 'application/json');
+  xhr.setRequestHeader('Authorization', 'Basic ' + apiKey);
+  xhr.onload = function() {
+    if (xhr.status === 200) {
+      const response = JSON.parse(xhr.responseText);
+
+      // Fill out the contact form with the decoded data
+      const form = document.querySelector('#multi-point-vehicle-inspection-form');
+      const vinNumberField = form.querySelector('#input_1_1');
+      const yearField = form.querySelector('#input_1_2');
+      const makeField = form.querySelector('#input_1_3');
+      const modelField = form.querySelector('#input_1_4');
+      const trimField = form.querySelector('#input_1_5');
+
+      vinNumberField.value = response.data.vin;
+      yearField.value = response.data.year;
+      makeField.value = response.data.make;
+      modelField.value = response.data.model;
+      trimField.value = response.data.trim;
+    } else {
+      console.log('Error decoding VIN number');
+    }
+  };
+  xhr.send(JSON.stringify({ vin: vinNumber }));
+}
+
+function scanVINButtonPressed() {
+  const cameraViewController = document.createElement("input");
+  cameraViewController.setAttribute("type", "file");
+  cameraViewController.setAttribute("accept", "image/*");
+  cameraViewController.onchange = (event) => {
+    const file = event.target.files[0];
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = () => {
+      const image = new Image();
+      image.src = reader.result;
+      image.onload = () => {
+        // Use ML Kit to recognize text in the image
+        const vision = FirebaseMLVision.vision();
+        const textRecognizer = vision.onDeviceTextRecognizer();
+        const visionImage = FirebaseMLVisionImage.fromBitmap(image);
+        textRecognizer.processImage(visionImage)
+          .then(result => {
+            const vinNumber = extractVINNumber(result.text);
+
+            // Use the CarMD API to decode the VIN number
+            decodeVINNumber(vinNumber);
+          })
+          .catch(error => {
+            console.log("Error recognizing text: " + error);
+          });
+      }
+    }
+  };
+  cameraViewController.click();
+}
