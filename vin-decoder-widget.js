@@ -3,18 +3,27 @@
   const CAR_MD_API_BASE_URL = 'https://api.carmd.com/v3.0';
   const PARTNER_TOKEN = 'c66918d63fa043e4afb3e8fa7bf37951';
   const AUTHORIZATION_KEY = 'Basic OWU1NWM3OGEtZGRhMC00NmRhLWI0YjYtM2Y5ODA1YTBhZDYz';
+  const ML_KIT_API_KEY = 'AIzaSyC3iRR3sSC07cXfIWQjO0gVze6AtP18tLw';
 
   // Define helper functions
   function decodeVIN(vin) {
     return new Promise(function (resolve, reject) {
-      const requestUrl = CAR_MD_API_BASE_URL + '/decode?vin=' + encodeURIComponent(vin);
+      const requestUrl = 'https://automl.googleapis.com/v1beta1/projects/156008741883/locations/us-central1/models/VIN_Decoder:predict';
+      const requestBody = {
+        payload: {
+          image: {
+            imageBytes: vin
+          }
+        }
+      };
       $.ajax({
         url: requestUrl,
-        type: 'GET',
+        type: 'POST',
         beforeSend: function (xhr) {
-          xhr.setRequestHeader('partner-token', PARTNER_TOKEN);
-          xhr.setRequestHeader('authorization', AUTHORIZATION_KEY);
+          xhr.setRequestHeader('Content-Type', 'application/json');
+          xhr.setRequestHeader('Authorization', 'Bearer ' + ML_KIT_API_KEY);
         },
+        data: JSON.stringify(requestBody),
         success: function (data) {
           resolve(data);
         },
@@ -26,17 +35,12 @@
   }
 
   function displayVINData(data) {
+    const vehicleData = data.payload[0].displayName.split(' ');
     $('#vin-widget-output').html(
       '<ul>' +
-      '<li><strong>Year:</strong> ' + data.year + '</li>' +
-      '<li><strong>Make:</strong> ' + data.make + '</li>' +
-      '<li><strong>Model:</strong> ' + data.model + '</li>' +
-      '<li><strong>Trim:</strong> ' + data.trim + '</li>' +
-      '<li><strong>Engine:</strong> ' + data.engine + '</li>' +
-      '<li><strong>Drive Type:</strong> ' + data.driveType + '</li>' +
-      '<li><strong>Vehicle Type:</strong> ' + data.vehicleType + '</li>' +
-      '<li><strong>Body Type:</strong> ' + data.bodyType + '</li>' +
-      '<li><strong>Fuel Type:</strong> ' + data.fuelType + '</li>' +
+      '<li><strong>Year:</strong> ' + vehicleData[0] + '</li>' +
+      '<li><strong>Make:</strong> ' + vehicleData[1] + '</li>' +
+      '<li><strong>Model:</strong> ' + vehicleData[2] + '</li>' +
       '</ul>'
     );
   }
@@ -85,4 +89,4 @@
         });
     }
 
-    // Set up barcode scanner
+    //
