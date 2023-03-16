@@ -1,0 +1,743 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C0A4A74529C2CB77009CB1FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A4A74429C2CB77009CB1FA /* AppDelegate.swift */; };
+		C0A4A74729C2CB77009CB1FA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A4A74629C2CB77009CB1FA /* ViewController.swift */; };
+		C0A4A74A29C2CB77009CB1FA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0A4A74829C2CB77009CB1FA /* Main.storyboard */; };
+		C0A4A74C29C2CB79009CB1FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0A4A74B29C2CB79009CB1FA /* Assets.xcassets */; };
+		C0A4A74F29C2CB79009CB1FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0A4A74D29C2CB79009CB1FA /* LaunchScreen.storyboard */; };
+		C0A4A75A29C2CB7A009CB1FA /* Vin_DecoderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A4A75929C2CB7A009CB1FA /* Vin_DecoderTests.swift */; };
+		C0A4A76529C2CB7A009CB1FA /* Vin_DecoderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A4A76429C2CB7A009CB1FA /* Vin_DecoderUITests.swift */; };
+		C0A4A77929C2CC72009CB1FA /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0A4A77829C2CC72009CB1FA /* NotificationCenter.framework */; };
+		C0A4A77C29C2CC72009CB1FA /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A4A77B29C2CC72009CB1FA /* TodayViewController.swift */; };
+		C0A4A77F29C2CC72009CB1FA /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0A4A77D29C2CC72009CB1FA /* MainInterface.storyboard */; };
+		C0A4A78329C2CC72009CB1FA /* VIN DECODER EXTENSION.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = C0A4A77629C2CC72009CB1FA /* VIN DECODER EXTENSION.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C0A4A75629C2CB7A009CB1FA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C0A4A73929C2CB77009CB1FA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C0A4A74029C2CB77009CB1FA;
+			remoteInfo = "Vin Decoder";
+		};
+		C0A4A76129C2CB7A009CB1FA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C0A4A73929C2CB77009CB1FA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C0A4A74029C2CB77009CB1FA;
+			remoteInfo = "Vin Decoder";
+		};
+		C0A4A78129C2CC72009CB1FA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C0A4A73929C2CB77009CB1FA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C0A4A77529C2CC72009CB1FA;
+			remoteInfo = "VIN DECODER EXTENSION";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C0A4A78729C2CC72009CB1FA /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				C0A4A78329C2CC72009CB1FA /* VIN DECODER EXTENSION.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		C0A4A74129C2CB77009CB1FA /* Vin Decoder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Vin Decoder.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C0A4A74429C2CB77009CB1FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C0A4A74629C2CB77009CB1FA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C0A4A74929C2CB77009CB1FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C0A4A74B29C2CB79009CB1FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C0A4A74E29C2CB79009CB1FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C0A4A75029C2CB79009CB1FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C0A4A75529C2CB7A009CB1FA /* Vin DecoderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Vin DecoderTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C0A4A75929C2CB7A009CB1FA /* Vin_DecoderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vin_DecoderTests.swift; sourceTree = "<group>"; };
+		C0A4A75B29C2CB7A009CB1FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C0A4A76029C2CB7A009CB1FA /* Vin DecoderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Vin DecoderUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C0A4A76429C2CB7A009CB1FA /* Vin_DecoderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vin_DecoderUITests.swift; sourceTree = "<group>"; };
+		C0A4A76629C2CB7A009CB1FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C0A4A77629C2CC72009CB1FA /* VIN DECODER EXTENSION.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "VIN DECODER EXTENSION.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C0A4A77829C2CC72009CB1FA /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		C0A4A77B29C2CC72009CB1FA /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		C0A4A77E29C2CC72009CB1FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		C0A4A78029C2CC72009CB1FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C0A4A73E29C2CB77009CB1FA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C0A4A75229C2CB7A009CB1FA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C0A4A75D29C2CB7A009CB1FA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C0A4A77329C2CC72009CB1FA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C0A4A77929C2CC72009CB1FA /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C0A4A73829C2CB77009CB1FA = {
+			isa = PBXGroup;
+			children = (
+				C0A4A74329C2CB77009CB1FA /* Vin Decoder */,
+				C0A4A75829C2CB7A009CB1FA /* Vin DecoderTests */,
+				C0A4A76329C2CB7A009CB1FA /* Vin DecoderUITests */,
+				C0A4A77A29C2CC72009CB1FA /* VIN DECODER EXTENSION */,
+				C0A4A77729C2CC72009CB1FA /* Frameworks */,
+				C0A4A74229C2CB77009CB1FA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C0A4A74229C2CB77009CB1FA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C0A4A74129C2CB77009CB1FA /* Vin Decoder.app */,
+				C0A4A75529C2CB7A009CB1FA /* Vin DecoderTests.xctest */,
+				C0A4A76029C2CB7A009CB1FA /* Vin DecoderUITests.xctest */,
+				C0A4A77629C2CC72009CB1FA /* VIN DECODER EXTENSION.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C0A4A74329C2CB77009CB1FA /* Vin Decoder */ = {
+			isa = PBXGroup;
+			children = (
+				C0A4A74429C2CB77009CB1FA /* AppDelegate.swift */,
+				C0A4A74629C2CB77009CB1FA /* ViewController.swift */,
+				C0A4A74829C2CB77009CB1FA /* Main.storyboard */,
+				C0A4A74B29C2CB79009CB1FA /* Assets.xcassets */,
+				C0A4A74D29C2CB79009CB1FA /* LaunchScreen.storyboard */,
+				C0A4A75029C2CB79009CB1FA /* Info.plist */,
+			);
+			path = "Vin Decoder";
+			sourceTree = "<group>";
+		};
+		C0A4A75829C2CB7A009CB1FA /* Vin DecoderTests */ = {
+			isa = PBXGroup;
+			children = (
+				C0A4A75929C2CB7A009CB1FA /* Vin_DecoderTests.swift */,
+				C0A4A75B29C2CB7A009CB1FA /* Info.plist */,
+			);
+			path = "Vin DecoderTests";
+			sourceTree = "<group>";
+		};
+		C0A4A76329C2CB7A009CB1FA /* Vin DecoderUITests */ = {
+			isa = PBXGroup;
+			children = (
+				C0A4A76429C2CB7A009CB1FA /* Vin_DecoderUITests.swift */,
+				C0A4A76629C2CB7A009CB1FA /* Info.plist */,
+			);
+			path = "Vin DecoderUITests";
+			sourceTree = "<group>";
+		};
+		C0A4A77729C2CC72009CB1FA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C0A4A77829C2CC72009CB1FA /* NotificationCenter.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C0A4A77A29C2CC72009CB1FA /* VIN DECODER EXTENSION */ = {
+			isa = PBXGroup;
+			children = (
+				C0A4A77B29C2CC72009CB1FA /* TodayViewController.swift */,
+				C0A4A77D29C2CC72009CB1FA /* MainInterface.storyboard */,
+				C0A4A78029C2CC72009CB1FA /* Info.plist */,
+			);
+			path = "VIN DECODER EXTENSION";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C0A4A74029C2CB77009CB1FA /* Vin Decoder */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C0A4A76929C2CB7A009CB1FA /* Build configuration list for PBXNativeTarget "Vin Decoder" */;
+			buildPhases = (
+				C0A4A73D29C2CB77009CB1FA /* Sources */,
+				C0A4A73E29C2CB77009CB1FA /* Frameworks */,
+				C0A4A73F29C2CB77009CB1FA /* Resources */,
+				C0A4A78729C2CC72009CB1FA /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C0A4A78229C2CC72009CB1FA /* PBXTargetDependency */,
+			);
+			name = "Vin Decoder";
+			productName = "Vin Decoder";
+			productReference = C0A4A74129C2CB77009CB1FA /* Vin Decoder.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C0A4A75429C2CB7A009CB1FA /* Vin DecoderTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C0A4A76C29C2CB7A009CB1FA /* Build configuration list for PBXNativeTarget "Vin DecoderTests" */;
+			buildPhases = (
+				C0A4A75129C2CB7A009CB1FA /* Sources */,
+				C0A4A75229C2CB7A009CB1FA /* Frameworks */,
+				C0A4A75329C2CB7A009CB1FA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C0A4A75729C2CB7A009CB1FA /* PBXTargetDependency */,
+			);
+			name = "Vin DecoderTests";
+			productName = "Vin DecoderTests";
+			productReference = C0A4A75529C2CB7A009CB1FA /* Vin DecoderTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		C0A4A75F29C2CB7A009CB1FA /* Vin DecoderUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C0A4A76F29C2CB7A009CB1FA /* Build configuration list for PBXNativeTarget "Vin DecoderUITests" */;
+			buildPhases = (
+				C0A4A75C29C2CB7A009CB1FA /* Sources */,
+				C0A4A75D29C2CB7A009CB1FA /* Frameworks */,
+				C0A4A75E29C2CB7A009CB1FA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C0A4A76229C2CB7A009CB1FA /* PBXTargetDependency */,
+			);
+			name = "Vin DecoderUITests";
+			productName = "Vin DecoderUITests";
+			productReference = C0A4A76029C2CB7A009CB1FA /* Vin DecoderUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		C0A4A77529C2CC72009CB1FA /* VIN DECODER EXTENSION */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C0A4A78429C2CC72009CB1FA /* Build configuration list for PBXNativeTarget "VIN DECODER EXTENSION" */;
+			buildPhases = (
+				C0A4A77229C2CC72009CB1FA /* Sources */,
+				C0A4A77329C2CC72009CB1FA /* Frameworks */,
+				C0A4A77429C2CC72009CB1FA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "VIN DECODER EXTENSION";
+			productName = "VIN DECODER EXTENSION";
+			productReference = C0A4A77629C2CC72009CB1FA /* VIN DECODER EXTENSION.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C0A4A73929C2CB77009CB1FA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = Xander;
+				TargetAttributes = {
+					C0A4A74029C2CB77009CB1FA = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					C0A4A75429C2CB7A009CB1FA = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = C0A4A74029C2CB77009CB1FA;
+					};
+					C0A4A75F29C2CB7A009CB1FA = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = C0A4A74029C2CB77009CB1FA;
+					};
+					C0A4A77529C2CC72009CB1FA = {
+						CreatedOnToolsVersion = 10.1;
+					};
+				};
+			};
+			buildConfigurationList = C0A4A73C29C2CB77009CB1FA /* Build configuration list for PBXProject "Vin Decoder" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C0A4A73829C2CB77009CB1FA;
+			productRefGroup = C0A4A74229C2CB77009CB1FA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C0A4A74029C2CB77009CB1FA /* Vin Decoder */,
+				C0A4A75429C2CB7A009CB1FA /* Vin DecoderTests */,
+				C0A4A75F29C2CB7A009CB1FA /* Vin DecoderUITests */,
+				C0A4A77529C2CC72009CB1FA /* VIN DECODER EXTENSION */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C0A4A73F29C2CB77009CB1FA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C0A4A74F29C2CB79009CB1FA /* LaunchScreen.storyboard in Resources */,
+				C0A4A74C29C2CB79009CB1FA /* Assets.xcassets in Resources */,
+				C0A4A74A29C2CB77009CB1FA /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C0A4A75329C2CB7A009CB1FA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C0A4A75E29C2CB7A009CB1FA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C0A4A77429C2CC72009CB1FA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C0A4A77F29C2CC72009CB1FA /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C0A4A73D29C2CB77009CB1FA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C0A4A74729C2CB77009CB1FA /* ViewController.swift in Sources */,
+				C0A4A74529C2CB77009CB1FA /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C0A4A75129C2CB7A009CB1FA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C0A4A75A29C2CB7A009CB1FA /* Vin_DecoderTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C0A4A75C29C2CB7A009CB1FA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C0A4A76529C2CB7A009CB1FA /* Vin_DecoderUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C0A4A77229C2CC72009CB1FA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C0A4A77C29C2CC72009CB1FA /* TodayViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C0A4A75729C2CB7A009CB1FA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C0A4A74029C2CB77009CB1FA /* Vin Decoder */;
+			targetProxy = C0A4A75629C2CB7A009CB1FA /* PBXContainerItemProxy */;
+		};
+		C0A4A76229C2CB7A009CB1FA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C0A4A74029C2CB77009CB1FA /* Vin Decoder */;
+			targetProxy = C0A4A76129C2CB7A009CB1FA /* PBXContainerItemProxy */;
+		};
+		C0A4A78229C2CC72009CB1FA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C0A4A77529C2CC72009CB1FA /* VIN DECODER EXTENSION */;
+			targetProxy = C0A4A78129C2CC72009CB1FA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C0A4A74829C2CB77009CB1FA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C0A4A74929C2CB77009CB1FA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C0A4A74D29C2CB79009CB1FA /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C0A4A74E29C2CB79009CB1FA /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		C0A4A77D29C2CC72009CB1FA /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C0A4A77E29C2CC72009CB1FA /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C0A4A76729C2CB7A009CB1FA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C0A4A76829C2CB7A009CB1FA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C0A4A76A29C2CB7A009CB1FA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Vin Decoder/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "CS.Vin-Decoder";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C0A4A76B29C2CB7A009CB1FA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Vin Decoder/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "CS.Vin-Decoder";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		C0A4A76D29C2CB7A009CB1FA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Vin DecoderTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "CS.Vin-DecoderTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Vin Decoder.app/Vin Decoder";
+			};
+			name = Debug;
+		};
+		C0A4A76E29C2CB7A009CB1FA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Vin DecoderTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "CS.Vin-DecoderTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Vin Decoder.app/Vin Decoder";
+			};
+			name = Release;
+		};
+		C0A4A77029C2CB7A009CB1FA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Vin DecoderUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "CS.Vin-DecoderUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Vin Decoder";
+			};
+			name = Debug;
+		};
+		C0A4A77129C2CB7A009CB1FA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Vin DecoderUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "CS.Vin-DecoderUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Vin Decoder";
+			};
+			name = Release;
+		};
+		C0A4A78529C2CC72009CB1FA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "VIN DECODER EXTENSION/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "CS.Vin-Decoder.VIN-DECODER-EXTENSION";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C0A4A78629C2CC72009CB1FA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "VIN DECODER EXTENSION/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "CS.Vin-Decoder.VIN-DECODER-EXTENSION";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C0A4A73C29C2CB77009CB1FA /* Build configuration list for PBXProject "Vin Decoder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C0A4A76729C2CB7A009CB1FA /* Debug */,
+				C0A4A76829C2CB7A009CB1FA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C0A4A76929C2CB7A009CB1FA /* Build configuration list for PBXNativeTarget "Vin Decoder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C0A4A76A29C2CB7A009CB1FA /* Debug */,
+				C0A4A76B29C2CB7A009CB1FA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C0A4A76C29C2CB7A009CB1FA /* Build configuration list for PBXNativeTarget "Vin DecoderTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C0A4A76D29C2CB7A009CB1FA /* Debug */,
+				C0A4A76E29C2CB7A009CB1FA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C0A4A76F29C2CB7A009CB1FA /* Build configuration list for PBXNativeTarget "Vin DecoderUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C0A4A77029C2CB7A009CB1FA /* Debug */,
+				C0A4A77129C2CB7A009CB1FA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C0A4A78429C2CC72009CB1FA /* Build configuration list for PBXNativeTarget "VIN DECODER EXTENSION" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C0A4A78529C2CC72009CB1FA /* Debug */,
+				C0A4A78629C2CC72009CB1FA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C0A4A73929C2CB77009CB1FA /* Project object */;
+}
