@@ -34,8 +34,13 @@ func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMe
 }
 
 func extractVINNumber(from text: String) -> String? {
-    // TODO: Implement VIN number extraction logic
-    return nil
+    let vinPattern = "[A-HJ-NPR-Z\\d]{17}"
+    guard let range = text.range(of: vinPattern, options: .regularExpression) else {
+        return nil
+    }
+    return String(text[range])
+}
+
 }
 
 function decodeVINNumber(vinNumber) {
